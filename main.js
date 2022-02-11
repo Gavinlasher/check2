@@ -25,12 +25,13 @@ let clickUpgrades = {
 
 let autoUpgrades = {
   Gc2080: {
-    name: "Gc2080",
+    name: "gc2080",
+    clickPower: 48,
     cost: 500,
-    quantity: 15,
+    quantity: 0,
   },
   Gc3060: {
-    name: "Gc3060",
+    name: "gc3060",
     cost: 1000,
     quantity: 0,
     clickPower: 20,
@@ -48,8 +49,12 @@ function mineBitcoin() {
 function autoUpgrade() {
   for (const key in autoUpgrades) {
     let upgrade = autoUpgrades[key];
-    bitcoin += upgrade.clickPower * upgrade.quantity;
+    if (upgrade.quantity > 0) {
+      bitcoin += upgrade.clickPower * upgrade.quantity;
+      //   setInterval(autoUpgrade, 2000);
+    }
   }
+  draw();
 }
 
 function clickMiners() {
@@ -70,20 +75,24 @@ function draw() {
 
 function buyMiner(name) {
   let upgrade = clickUpgrades[name];
-  let autoUpgrade = autoUpgrades[name];
   if (bitcoin < upgrade.cost) {
     return console.log("not enough funds");
   }
-  if (bitcoin < autoUpgrade.cost) {
-    return console.log("not enough funds");
-  }
   bitcoin -= upgrade.cost;
-  bitcoin -= autoUpgrade.cost;
-  //   main.clickPower += miner.clickPower;
   upgrade.quantity++;
   upgrade.cost *= 2;
-  autoUpgrade.quantity++;
-  autoUpgrade.cost *= 2;
   draw();
 }
-// let graphic = setInterval(autoUpgrade, 2000);
+
+function buyAuto(name) {
+  let auto = autoUpgrades[name];
+  if (bitcoin < auto.cost) {
+    return console.log("not enough funds");
+  }
+  bitcoin -= auto.cost;
+  auto.quantity++;
+  auto.cost *= 2;
+  draw();
+}
+
+setInterval(autoUpgrade, 2000);
