@@ -71,6 +71,10 @@ function draw() {
   document.getElementById("minerv2").innerText = clickUpgrades.minerv2.quantity;
   document.getElementById("Gc2080").innerText = autoUpgrades.Gc2080.quantity;
   document.getElementById("Gc3060").innerText = autoUpgrades.Gc3060.quantity;
+  document.getElementById("2080").innerText = autoUpgrades.Gc2080.cost;
+  document.getElementById("3060").innerText = autoUpgrades.Gc3060.cost;
+  document.getElementById("minercost").innerText = clickUpgrades.miner.cost;
+  document.getElementById("minerv2cost").innerText = clickUpgrades.minerv2.cost;
 }
 
 function buyMiner(name) {

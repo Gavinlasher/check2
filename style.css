@@ -4,3 +4,13 @@ h1 {
 .bg-img {
   background-color: rgb(165, 164, 164);
 }
+p {
+  margin: 8px;
+}
+main {
+  height: 60vh;
+}
+.card2 {
+  height: 30vh;
+  width: 40vh;
+}

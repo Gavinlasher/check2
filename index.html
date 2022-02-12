@@ -13,18 +13,18 @@
 </head>
 
 <body>
-    <header class="container-fluid">
+    <header class="container-fluid p-0">
         <div class="row text-center">
             <div class="col-12 bg-dark center-text">
                 <h1>Bitcoin Miner</h1>
             </div>
         </div>
     </header>
-    <main class="container-fluid bg-img">
-        <div class="row">
+    <main class="container-fluid bg-img p-0">
+        <div class="row ">
             <!-- multi -->
-            <div class="col-4">
-                <div class="bg-dark text-center text-light">
+            <div class="col-12 col-md-4 p-5">
+                <div class="card2 bg-dark text-center text-light p-5 ">
                     <h3>Progess</h3>
                     <li>
                         bitcoin per second:<span>0</span>
@@ -35,14 +35,14 @@
                 </div>
             </div>
             <!-- end  -->
-            <div class="col-4">
+            <div class=" col-12 col-md-4 p-5">
                 <img class='img-fluid' onclick="mineBitcoin()"
-                    src="https://cdn.pixabay.com/photo/2017/01/25/12/31/bitcoin-2007769__480.jpg" alt="a bitcon"
-                    srcset="">
+                    src="https://th.bing.com/th/id/R.5b140862be0bc9423afbc621cb14b97a?rik=k7e%2fFiexPJnulA&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f1%2fBitcoin-PNG-File.png&ehk=Rt%2bSEdMuraTHnfiDWb2pgpmX4tZFBONTP35oGusdGmA%3d&risl=&pid=ImgRaw&r=0"
+                    alt="a bitcon" srcset="">
             </div>
             <!-- card inv -->
-            <div class="col-4">
-                <div class="bg-dark text-light text-center">
+            <div class="col12 col-md-4 p-5">
+                <div class="card2 bg-dark text-light text-center p-5">
                     <h3>Inventory</h3>
                     <li>
                         Bitcoin:<span id="bitcoin">0</span>
@@ -76,22 +76,22 @@
             <div class="col-12">
                 <div class="store bg-dark text-light text-center">
                     <h3>Store</h3>
-                    <div class="click-upgrades">
+                    <div class="click-upgrades p-3">
                         <h5>Click Upgrades</h5>
                         <div class="d-flex justify-content-center">
-                            <button onclick="buyMiner('miner')">miner</button>
-                            <p>Cost = 0</p>
-                            <button onclick="buyMiner('minerv2')">minerv2</button>
-                            <p> Cost = 0</p>
+                            <button class="btn btn-outline-light" onclick="buyMiner('miner')">miner</button>
+                            <p>Cost = <span id="minercost">0</span></p>
+                            <button class="btn btn-outline-light" onclick="buyMiner('minerv2')">minerv2</button>
+                            <p> Cost = <span id="minerv2cost">0</span></p>
                         </div>
                     </div>
                     <div class="passive-upgrade text-center">
                         <h5> Graphics Upgrade</h5>
                         <div class="d-flex justify-content-center">
-                            <button onclick="buyAuto('Gc2080')">Gc2080</button>
-                            <p> Cost = 0</p>
-                            <button onclick="buyAuto('Gc3060')">Gc3060</button>
-                            <p> Cost = 0</p>
+                            <button class="btn btn-outline-light" onclick="buyAuto('Gc2080')">Gc2080</button>
+                            <p> Cost = <span id="2080">0</span></p>
+                            <button class="btn btn-outline-light " onclick="buyAuto('Gc3060')">Gc3060</button>
+                            <p> Cost =<span id="3060">0</span></p>
                         </div>
                     </div>
                 </div>
