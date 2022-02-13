@@ -7,10 +7,24 @@ h1 {
 p {
   margin: 8px;
 }
-main {
-  height: 60vh;
-}
+
 .card2 {
   height: 30vh;
-  width: 40vh;
+  
+}
+.imgsize{
+  height: 30vh;
+  width: 30vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+main{
+  flex-grow: 1;
+  padding: 0 !important;
+  min-height: 100vh;
+}
+footer{
+  height: 100%;
+ 
 }
